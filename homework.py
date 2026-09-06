@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import logging
 import os
 import sys
@@ -16,32 +15,17 @@ load_dotenv()
 PRACTICUM_TOKEN = os.getenv('PRACTICUM_TOKEN')
 VK_TOKEN = os.getenv('VK_TOKEN')
 VK_USER_ID = os.getenv('VK_USER_ID')
-=======
-...
-
-load_dotenv()
-
-
-PRACTICUM_TOKEN = ...
-VK_TOKEN = ...
-VK_USER_ID = ...
->>>>>>> 1faab1ab461a5e41f379fe2abad7295b1c5a2828
 
 RETRY_PERIOD = 600
 ENDPOINT = 'https://practicum.yandex.ru/api/user_api/homework_statuses/'
 HEADERS = {'Authorization': f'OAuth {PRACTICUM_TOKEN}'}
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 1faab1ab461a5e41f379fe2abad7295b1c5a2828
 HOMEWORK_VERDICTS = {
     'approved': 'Работа проверена: ревьюеру всё понравилось. Ура!',
     'reviewing': 'Работа взята на проверку ревьюером.',
     'rejected': 'Работа проверена: у ревьюера есть замечания.'
 }
 
-<<<<<<< HEAD
 logger = logging.getLogger(__name__)
 
 
@@ -118,34 +102,11 @@ def parse_status(homework):
         raise ValueError(f'Недокументированный статус работы: {status}')
 
     verdict = HOMEWORK_VERDICTS[status]
-=======
-
-def check_tokens():
-    ...
-
-
-def send_message(vk, message):
-    ...
-
-
-def get_api_answer(timestamp):
-    ...
-
-
-def check_response(response):
-    ...
-
-
-def parse_status(homework):
-    ...
-
->>>>>>> 1faab1ab461a5e41f379fe2abad7295b1c5a2828
     return f'Изменился статус проверки работы "{homework_name}". {verdict}'
 
 
 def main():
     """Основная логика работы бота."""
-<<<<<<< HEAD
     logging.basicConfig(
         level=logging.DEBUG,
         format='%(asctime)s [%(levelname)s] %(message)s',
@@ -192,27 +153,6 @@ def main():
                 last_error_message = message
 
         time.sleep(RETRY_PERIOD)
-=======
-
-    ...
-
-    # Создаем сессию для бота
-    vk_session = ...
-    vk = ...
-    timestamp = int(time.time())
-
-    ...
-
-    while True:
-        try:
-
-            ...
-
-        except Exception as error:
-            message = f'Сбой в работе программы: {error}'
-            ...
-        ...
->>>>>>> 1faab1ab461a5e41f379fe2abad7295b1c5a2828
 
 
 if __name__ == '__main__':
