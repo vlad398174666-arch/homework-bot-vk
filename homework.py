@@ -8,7 +8,7 @@ import requests
 import vk_api
 from dotenv import load_dotenv
 
-from exceptions import APIRequestError, APIResponseError
+from exceptions import APIRequestError, APIResponseError, SendMessageError
 
 load_dotenv()
 
@@ -28,10 +28,6 @@ HOMEWORK_VERDICTS = {
 }
 
 logger = logging.getLogger(__name__)
-
-
-class SendMessageError(Exception):
-    """Кастомное исключение при сбое отправки сообщения в VK."""
 
 
 def check_tokens():
